@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# `torch.distributed` seems to not correctly set env vars on HAC machine,
+# so we have to manually set them
+export RANK=0
+export WORLD_SIZE=1
+export MASTER_ADDR=127.0.0.1
+export MASTER_PORT=12345
+
+python -m torch.distributed.launch \
+        --nproc_per_node 1 \
+        --master_port $MASTER_PORT \
+        main.py \
+        --cfg configs/swin/swin_tiny_patch4_window7_224.yaml \
+        --batch-size 128 \
+        --data-path /data/work/datasets/imagenet_100cls
