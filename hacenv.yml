@@ -4,10 +4,9 @@ dependencies:
   - python=3.8
   - pip
   - pip:
-    - torch==1.10.0+cpuonly.moreh0.2.0
-    # - torch==1.7.1+cu110.moreh22.11.2
-    - torchvision
-    - torchaudio
+    - moreh-driver==23.1.1
+    - torch==1.10.0+cu111.moreh23.1.1
+    #- torch==1.7.1+cu110.moreh23.1.1
     - timm==0.4.12
     - opencv-python==4.4.0.46
     - termcolor==1.1.0
