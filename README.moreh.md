@@ -78,8 +78,9 @@ passed to the training program to accelerate.
 
 
 ## Run
-For testing purpose, edit `config.py` and set `_C.TRAIN.EPOCHS=1` or any desired
-number of training epochs.
+Before running, edit `config.py` and set `_C.TRAIN.EPOCHS` to the desired number.
+Note that, since warmup for Cosine Learning Rate Scheduler is enabled by default, the
+number of training epochs should be at least 25.
 
 To train from scratch, edit and run the `a100-train-from-scratch` script on
 A100 VM and `hac-train-from-scratch` script on HAC VM:
