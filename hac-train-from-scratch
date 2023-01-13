@@ -7,10 +7,13 @@ export WORLD_SIZE=1
 export MASTER_ADDR=127.0.0.1
 export MASTER_PORT=12345
 
-python -m torch.distributed.launch \
+dataset_dir=${1:-/NAS/common_data/imagenet_100cls}
+[[ ! -d $dataset_dir ]] && echo "Dataset directory ${dataset_dir} not found" && exit 1
+
+/usr/bin/env python3 -m torch.distributed.launch \
         --nproc_per_node 1 \
         --master_port $MASTER_PORT \
         main.py \
         --cfg configs/swin/swin_tiny_patch4_window7_224.yaml \
         --batch-size 128 \
-        --data-path /data/work/datasets/imagenet_100cls
+        --data-path $dataset_dir
