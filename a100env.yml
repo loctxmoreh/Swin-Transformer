@@ -1,0 +1,17 @@
+name: swin
+channels:
+    - pytorch
+dependencies:
+    - python=3.8
+    - pytorch=1.7.1
+    - cudatoolkit=11.0
+      #- pytorch=1.12.1
+      #- cudatoolkit=11.3
+    - pip
+    - pip:
+        - timm==0.4.12
+        - opencv-python==4.4.0.46
+        - termcolor==1.1.0
+        - yacs==0.1.8
+        - pyyaml
+        - scipy
