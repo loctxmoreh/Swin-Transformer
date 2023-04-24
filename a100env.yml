@@ -1,12 +1,12 @@
 name: swin
 channels:
     - pytorch
+    - conda-forge
 dependencies:
     - python=3.8
     - pytorch=1.7.1
-    - cudatoolkit=11.0
-      #- pytorch=1.12.1
-      #- cudatoolkit=11.3
+    - torchvision=0.8.2
+    - cudatoolkit=11.2
     - pip
     - pip:
         - timm==0.4.12
