@@ -6,7 +6,7 @@ dependencies:
     - python=3.8
     - pytorch=1.7.1
     - torchvision=0.8.2
-    - cudatoolkit=11.2
+    - cudatoolkit=11.0
     - pip
     - pip:
         - timm==0.4.12
